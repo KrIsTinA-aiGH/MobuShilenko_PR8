@@ -42,8 +42,8 @@
     <Button
         android:id="@+id/button"
         android:layout_width="178dp"
-        android:layout_height="41dp"
+        android:layout_height="37dp"
         android:text="@string/Next"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="116dp" />
+        tools:layout_editor_absoluteY="114dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
