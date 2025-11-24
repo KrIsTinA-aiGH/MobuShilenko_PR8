@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CookBookWatchPR8">
         <activity
+            android:name=".ShowItem"
+            android:exported="false" />
+        <activity
+            android:name=".Table"
+            android:exported="false" />
+        <activity
             android:name=".list_item"
             android:exported="false" />
         <activity

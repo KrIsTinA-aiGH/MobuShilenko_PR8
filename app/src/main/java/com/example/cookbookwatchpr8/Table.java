@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,34 +15,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
-    private TextView timeTextView;
+public class Table extends AppCompatActivity {
+    private TextView timeTextViewTable;
     private Handler handler;
     private Runnable timeUpdater;
-    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_table);
 
-        // Инициализация TextView для времени
-        timeTextView = findViewById(R.id.timeTextView);
+        // Инициализация времени
+        timeTextViewTable = findViewById(R.id.timeTextViewTable);
         handler = new Handler();
-
-        // Инициализация кнопки
-        nextButton = findViewById(R.id.button);
-
-        // Обработчик нажатия на кнопку
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Переход на второй экран
-                Intent intent = new Intent(MainActivity.this, Table.class);
-                startActivity(intent);
-            }
-        });
 
         // Создаем Runnable для обновления времени
         timeUpdater = new Runnable() {
@@ -56,7 +42,31 @@ public class MainActivity extends AppCompatActivity {
         // Запускаем обновление времени
         handler.post(timeUpdater);
 
-        // Существующий код для EdgeToEdge
+        // Находим ImageView и добавляем обработчик нажатия
+        ImageView backArrow = findViewById(R.id.imageView2);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переход на MainActivity
+                Intent intent = new Intent(Table.this, MainActivity.class);
+                startActivity(intent);
+                finish(); // Закрываем текущую активность
+            }
+        });
+
+        // Обработчик для борща
+        View borschtLayout = findViewById(R.id.imageView3).getParent();
+        borschtLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переход на ShowItem для борща
+                Intent intent = new Intent(Table.this, ShowItem.class);
+                intent.putExtra("dish_name", "Борщ");
+                intent.putExtra("dish_id", 1);
+                startActivity(intent);
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -67,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
         String currentTime = sdf.format(new Date());
-        timeTextView.setText(currentTime);
+        timeTextViewTable.setText(currentTime);
     }
 
     @Override
