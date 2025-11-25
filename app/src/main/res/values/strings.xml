@@ -7,7 +7,14 @@
     <string name="b3">Блинчики</string>
     <string name="b4">Молочный коктель</string>
     <string name="b5">Спагетти</string>
+    <string name="default_time">00:00</string>
     <string name="back_arrow">Back arrow</string>
+    <string name="logo_description">CookBook logo</string>
+    <string name="borscht_icon">Borscht icon</string>
+    <string name="spaghetti_icon">Spaghetti icon</string>
+    <string name="pancakes_icon">Pancakes icon</string>
+    <string name="milkshake_icon">Milkshake icon</string>
+    <string name="salad_icon">Caesar salad icon</string>
     <string name="opisanie">Ингредиенты
                 \nсвинина (говядина) на кости — 800 г;
                 \nсвежая капуста — 300 г;

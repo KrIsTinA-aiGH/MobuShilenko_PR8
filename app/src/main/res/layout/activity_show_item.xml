@@ -17,7 +17,22 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/backArrowShowItem"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/free_icon_borscht_3056196" />
+        app:srcCompat="@drawable/free_icon_borscht_3056196"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="39dp"
+        android:layout_height="20dp"
+        android:text="@string/default_time"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- Название блюда -->
     <TextView
@@ -68,9 +83,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Изображение блюда -->
 
-            <!-- Описание блюда -->
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -78,7 +91,8 @@
                 android:layout_height="200dp"
                 android:layout_marginBottom="16dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/hdb0hias5ck" />
+                app:srcCompat="@drawable/hdb0hias5ck"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView11"

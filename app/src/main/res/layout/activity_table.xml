@@ -8,23 +8,26 @@
     android:background="@android:color/black"
     tools:context=".Table">
 
-    <!-- Время в правом верхнем углу -->
+    <!-- Time in top right corner -->
     <TextView
         android:id="@+id/timeTextViewTable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="00:00"
+        android:text="@string/default_time"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Стрелка назад в левом верхнем углу -->
+    <!-- Back arrow in top left corner -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="25dp"
         android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:clickable="true"
         android:contentDescription="@string/back_arrow"
         android:focusable="true"
@@ -32,10 +35,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/free_icon_arrow_14736767" />
 
-    <!-- Список блюд -->
+    <!-- Dishes list -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +51,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Борщ -->
+            <!-- Borscht -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/borschtContainer"
                 android:layout_width="match_parent"
@@ -62,6 +66,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="16dp"
+                    android:contentDescription="@string/borscht_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -83,7 +88,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Спагетти -->
+            <!-- Spaghetti -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/spaghettiContainer"
                 android:layout_width="match_parent"
@@ -98,6 +103,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="16dp"
+                    android:contentDescription="@string/spaghetti_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -119,7 +125,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Блинчики -->
+            <!-- Pancakes -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pancakesContainer"
                 android:layout_width="match_parent"
@@ -134,6 +140,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="16dp"
+                    android:contentDescription="@string/pancakes_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -155,7 +162,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Молочный коктейль -->
+            <!-- Milkshake -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/milkshakeContainer"
                 android:layout_width="match_parent"
@@ -170,6 +177,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="16dp"
+                    android:contentDescription="@string/milkshake_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -191,7 +199,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Салат Цезарь -->
+            <!-- Caesar Salad -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/saladContainer"
                 android:layout_width="match_parent"
@@ -206,6 +214,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="16dp"
+                    android:contentDescription="@string/salad_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
