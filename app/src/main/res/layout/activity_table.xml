@@ -5,25 +5,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Table"
-    android:background="@android:color/black">
+    android:background="@android:color/black"
+    tools:context=".Table">
 
-
+    <!-- Время в правом верхнем углу -->
     <TextView
         android:id="@+id/timeTextViewTable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="00:00"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Стрелка назад в левом верхнем углу -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="25dp"
         android:layout_height="19dp"
-        android:layout_marginTop="4dp"
         android:clickable="true"
         android:contentDescription="@string/back_arrow"
         android:focusable="true"
@@ -31,131 +32,199 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/free_icon_arrow_14736767" />
 
+    <!-- Список блюд -->
     <ScrollView
-        android:layout_width="178dp"
-        android:layout_height="158dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="21dp">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeTextViewTable">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
+            <!-- Борщ -->
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/borschtContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="@color/gray"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/free_icon_borscht_3056196"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="2dp" />
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/free_icon_borscht_3056196" />
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/b1"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView3"
-                    tools:layout_editor_absoluteY="9dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Спагетти -->
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/spaghettiContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="@color/gray"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/free_icon_spaghetti_5620880"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/free_icon_spaghetti_5620880" />
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/b5"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    tools:layout_editor_absoluteY="8dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Блинчики -->
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pancakesContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="@color/gray"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/free_icon_pancakes_12240816"
-                    tools:layout_editor_absoluteX="-2dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/free_icon_pancakes_12240816" />
 
                 <TextView
                     android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/b3"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView5"
-                    tools:layout_editor_absoluteY="0dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Молочный коктейль -->
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/milkshakeContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="@color/gray"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/free_icon_milkshake_7441402"
-                    tools:layout_editor_absoluteX="1dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/free_icon_milkshake_7441402" />
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/b4"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView6"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Салат Цезарь -->
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/saladContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="@color/gray"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    app:srcCompat="@drawable/free_icon_caesar_salad_5570573"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="-3dp" />
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/free_icon_caesar_salad_5570573" />
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="62dp"
-                    android:layout_height="23dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/b2"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    tools:layout_editor_absoluteY="5dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

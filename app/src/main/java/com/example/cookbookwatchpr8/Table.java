@@ -35,42 +35,40 @@ public class Table extends AppCompatActivity {
             @Override
             public void run() {
                 updateTime();
-                handler.postDelayed(this, 1000); // Обновлять каждую секунду
+                handler.postDelayed(this, 1000);
             }
         };
-
-        // Запускаем обновление времени
         handler.post(timeUpdater);
 
-        // Находим ImageView и добавляем обработчик нажатия
+        // Обработчик для стрелки назад
         ImageView backArrow = findViewById(R.id.imageView2);
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход на MainActivity
-                Intent intent = new Intent(Table.this, MainActivity.class);
-                startActivity(intent);
-                finish(); // Закрываем текущую активность
+                finish();
             }
         });
 
-        // Обработчик для борща
-        View borschtLayout = findViewById(R.id.imageView3).getParent();
-        borschtLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Переход на ShowItem для борща
-                Intent intent = new Intent(Table.this, ShowItem.class);
-                intent.putExtra("dish_name", "Борщ");
-                intent.putExtra("dish_id", 1);
-                startActivity(intent);
-            }
-        });
+        setupDishClickListeners();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+    }
+
+    private void setupDishClickListeners() {
+        // Борщ
+        View borschtLayout = findViewById(R.id.borschtContainer);
+        borschtLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Table.this, ShowItem.class);
+                intent.putExtra("dish_name", "Борщ");
+                intent.putExtra("dish_id", 1);
+                startActivity(intent);
+            }
         });
     }
 
@@ -83,7 +81,6 @@ public class Table extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Останавливаем обновление при закрытии активности
         if (handler != null && timeUpdater != null) {
             handler.removeCallbacks(timeUpdater);
         }
