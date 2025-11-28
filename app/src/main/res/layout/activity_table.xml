@@ -8,7 +8,6 @@
     android:background="@android:color/black"
     tools:context=".Table">
 
-    <!-- Time in top right corner -->
     <TextView
         android:id="@+id/timeTextViewTable"
         android:layout_width="wrap_content"
@@ -21,21 +20,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Back arrow in top left corner -->
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="25dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:clickable="true"
         android:contentDescription="@string/back_arrow"
         android:focusable="true"
+        android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/free_icon_arrow_14736767" />
+        app:srcCompat="@drawable/free_icon_arrow_14736767"
+        tools:ignore="VisualLintWearMargin" />
 
-    <!-- Dishes list -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -51,7 +48,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Borscht -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/borschtContainer"
                 android:layout_width="match_parent"
@@ -84,11 +81,12 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView3"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VisualLintWearMargin" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Spaghetti -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/spaghettiContainer"
                 android:layout_width="match_parent"
@@ -121,7 +119,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VisualLintWearMargin" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -158,7 +157,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView5"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VisualLintWearMargin" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -195,7 +195,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView6"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VisualLintWearMargin" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -232,7 +233,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VisualLintWearMargin" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,7 +3,6 @@ package com.example.cookbookwatchpr8;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -35,17 +34,13 @@ public class ShowItem extends AppCompatActivity {
 
         // Стрелка назад
         ImageView backArrow = findViewById(R.id.backArrowShowItem);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // Закрываем текущую активность и возвращаемся назад
-            }
+        backArrow.setOnClickListener(v -> {
+            finish(); // Закрываем текущую активность и возвращаемся назад
         });
 
         Intent intent = getIntent();
         if (intent != null) {
             String dishName = intent.getStringExtra("dish_name");
-            int dishId = intent.getIntExtra("dish_id", 0);
 
             // Устанавливаем название блюда в TextView
             TextView dishNameTextView = findViewById(R.id.textView7);

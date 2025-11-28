@@ -42,12 +42,7 @@ public class Table extends AppCompatActivity {
 
         // Обработчик для стрелки назад
         ImageView backArrow = findViewById(R.id.imageView2);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        backArrow.setOnClickListener(v -> finish());
 
         setupDishClickListeners();
 
@@ -61,14 +56,11 @@ public class Table extends AppCompatActivity {
     private void setupDishClickListeners() {
         // Борщ
         View borschtLayout = findViewById(R.id.borschtContainer);
-        borschtLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Table.this, ShowItem.class);
-                intent.putExtra("dish_name", "Борщ");
-                intent.putExtra("dish_id", 1);
-                startActivity(intent);
-            }
+        borschtLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(Table.this, ShowItem.class);
+            intent.putExtra("dish_name", "Борщ");
+            intent.putExtra("dish_id", 1);
+            startActivity(intent);
         });
     }
 

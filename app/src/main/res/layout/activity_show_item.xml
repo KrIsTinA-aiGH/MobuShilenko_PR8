@@ -32,7 +32,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextSizeCheck,VisualLintWearMargin" />
 
     <!-- Название блюда -->
     <TextView
@@ -60,7 +61,8 @@
         android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/free_icon_arrow_14736767" />
+        app:srcCompat="@drawable/free_icon_arrow_14736767"
+        tools:ignore="TouchTargetSizeCheck,VisualLintWearMargin" />
 
     <!-- Иконка блюда -->
 
@@ -92,7 +94,7 @@
                 android:layout_marginBottom="16dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/hdb0hias5ck"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription,VisualLintWearMargin" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -101,7 +103,8 @@
                 android:lineSpacingExtra="4sp"
                 android:text="@string/opisanie"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:ignore="VisualLintWearMargin" />
 
         </LinearLayout>
     </ScrollView>

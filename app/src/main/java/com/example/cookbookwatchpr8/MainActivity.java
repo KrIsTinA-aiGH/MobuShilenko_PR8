@@ -3,7 +3,6 @@ package com.example.cookbookwatchpr8;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -19,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView timeTextView;
     private Handler handler;
     private Runnable timeUpdater;
-    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +30,13 @@ public class MainActivity extends AppCompatActivity {
         handler = new Handler();
 
         // Инициализация кнопки
-        nextButton = findViewById(R.id.button);
+        Button nextButton = findViewById(R.id.button);
 
         // Обработчик нажатия на кнопку
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Переход на второй экран
-                Intent intent = new Intent(MainActivity.this, Table.class);
-                startActivity(intent);
-            }
+        nextButton.setOnClickListener(v -> {
+            // Переход на второй экран
+            Intent intent = new Intent(MainActivity.this, Table.class);
+            startActivity(intent);
         });
 
         // Создаем Runnable для обновления времени
